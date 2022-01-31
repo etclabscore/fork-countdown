@@ -67,7 +67,6 @@ function pollUpdate() {
       $('#estimate-prose').html(`Booyah! ${newCurrentBlockNumber - forkBlockN} blocks and counting in the Mystique era.`);
       $('#estimateRelationSyntax').text('occurred');
     }
-    
     updateUI();
   }
 
