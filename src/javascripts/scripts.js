@@ -58,6 +58,10 @@ function pollUpdate() {
         });
       }, 500);
     }
+    if (newCurrentBlockNumber >= forkBlockN) {
+      $('#estimate-prose').html(`Booyah! ${newCurrentBlockNumber - forkBlockN} blocks and counting in the Mystique era.`);
+      $('#estimateRelationSyntax').text('occurred');
+    }
     currentBlockNumber = newCurrentBlockNumber;
     updatedAt = Date.now();
 

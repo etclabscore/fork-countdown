@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ETC Fork Countdown</title>
-    <meta name="description" content="" />
+  <title>ETC Fork Countdown</title>
+  <meta name="description" content=""/>
 </head>
 <body class="monospace body-padding">
 
-<p>
+<div style="max-width: 600px;">
+  <p>
   <span style="font-size: x-large;">
   <strong>Ethereum Classic's</strong>
   <em><a href="https://ecips.ethereumclassic.org/ECIPs/ecip-1104">Mystique Hardfork</a></em>
   </span>
-  <br>
-  will occur at block <strong><span id="forkBlock">42</span></strong>.
-  <br>
+    <br>
+    <span id="estimateRelationSyntax">will occur</span> at block <strong><span id="forkBlock">42</span></strong>.
+    <br>
 
-  <div style="max-width: 600px;">
-  The <strong>current block number</strong><sup>A</sup> is
-  <strong>
-  <a id="currentBlockNumber-link" class="currentBlockNumber glow-on-update" href="https://blockscout.com/etc/mainnet/block/14445946/transactions">42</a>
-  </strong> (leaving <span id="forkBlockDiffCurrent"></span> blocks).
-  Assuming a <input id="blockTimeEstimateSeconds" type="number" style="display: inline; width: 10vw;"></input> second block interval,
-  this is estimated to be
+  <div id="estimate-prose">
+    The <strong>current block number</strong><sup>A</sup> is
+    <strong>
+      <a id="currentBlockNumber-link" class="currentBlockNumber glow-on-update"
+         href="https://blockscout.com/etc/mainnet/block/14445946/transactions">42</a>
+    </strong> (leaving <span id="forkBlockDiffCurrent"></span> blocks).
+    Assuming a <input id="blockTimeEstimateSeconds" type="number" style="display: inline; width: 10vw;"></input> second
+    block interval,
+    this is estimated to be
     <span style="font-weight: bold;" id="forkAt" class="glow-on-update">at an unknown time</span> from now, on
-  <strong><span id="forkAtHuman" class="glow-on-update">an unknown day</span></strong>.
+    <strong><span id="forkAtHuman" class="glow-on-update">an unknown day</span></strong>.
   </div>
   <br>
   The <em>Mystique</em> hardfork introduces <a href="https://eips.ethereum.org/EIPS/eip-3529">EIP-3529</a> and <a
-  href="https://eips.ethereum.org/EIPS/eip-3541">EIP-3541</a> to Ethereum Classic. <br>
+  href="https://eips.ethereum.org/EIPS/eip-3541">EIP-3541</a> to Ethereum Classic.
   These EIPs were introduced on the Ethereum (ETH) network via the <em>London</em> hardfork
-  <br>
   at block 12965000, on 2021 Aug 05 at 12:33:42 UTC.
   <br>
   <br>
+
+    To prepare for this fork, please upgrade Ethereum Classic client programs to equal to or better than the following
+    versions.
+
+  <ul>
+    <li><a href="https://github.com/etclabscore/core-geth/releases">core-geth v1.12.6</a></li>
+    <li><a href="https://github.com/hyperledger/besu/releases">besu v21.10.8</a></li>
+  </ul>
+  This countdown, and network details provided at a <a href="https://etclabscore.github.io/nodes-interface/">node
+  explorer</a>, are supported by
+  <a href="https://etccooperative.org/">ETC Cooperative</a>.
+  <br>
+  <br>
+  <span style="font-size: small; line-height: 1em;">
   <sup>A</sup>
   This estimate was last updated <span id="updatedAt" style="text-decoration: underline;" class="glow-on-update"><em>never</em></span>.
-  The next update will poll <span id="nextUpdateAt" style="text-decoration: underline;" class="glow-on-update"><em>soon</em></span>.
-
+    <br>
+  The next update will poll <span id="nextUpdateAt" style="text-decoration: underline;"
+                                  class="glow-on-update"><em>soon</em></span>.
+  </span>
   </p>
 
-
+</div>
 
 </body>
 </html>
