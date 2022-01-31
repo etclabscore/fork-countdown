@@ -1,1 +1,11 @@
-// Add your styles here
+// Load CSS Reset from NPM
+@import "~normalize.css";
+
+.body-padding {
+  padding: 10vw;
+}
+
+.monospace {
+  font-family: 'monospace', serif;
+  line-height: 1.75em;
+}
