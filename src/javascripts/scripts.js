@@ -44,6 +44,10 @@ function pollUpdate() {
 
   function handleSuccess(response) {
     console.log('success', response);
+
+    $('#estimate-prose').show();
+    $('#loading').hide();
+
     const newCurrentBlockNumber = parseInt(response.result.substring(2), 16);
     const blockNumberIncremented = newCurrentBlockNumber > currentBlockNumber;
     const forkHeightSurpassed = newCurrentBlockNumber >= forkBlockN;
