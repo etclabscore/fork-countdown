@@ -45,8 +45,13 @@ function pollUpdate() {
   function handleSuccess(response) {
     console.log('success', response);
     const newCurrentBlockNumber = parseInt(response.result.substring(2), 16);
+    const blockNumberIncremented = newCurrentBlockNumber > currentBlockNumber;
+    const forkHeightSurpassed = newCurrentBlockNumber >= forkBlockN;
 
-    if (newCurrentBlockNumber > currentBlockNumber) {
+    currentBlockNumber = newCurrentBlockNumber;
+    updatedAt = Date.now();
+
+    if (blockNumberIncremented) {
       const elOriginalColors = [];
       $('.glow-on-update').each((i, el) => {
         elOriginalColors.push($(el).css('color'));
@@ -58,13 +63,11 @@ function pollUpdate() {
         });
       }, 500);
     }
-    if (newCurrentBlockNumber >= forkBlockN) {
+    if (forkHeightSurpassed) {
       $('#estimate-prose').html(`Booyah! ${newCurrentBlockNumber - forkBlockN} blocks and counting in the Mystique era.`);
       $('#estimateRelationSyntax').text('occurred');
     }
-    currentBlockNumber = newCurrentBlockNumber;
-    updatedAt = Date.now();
-
+    
     updateUI();
   }
 
