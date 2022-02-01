@@ -15,19 +15,18 @@
   <em><a href="https://ecips.ethereumclassic.org/ECIPs/ecip-1104">Mystique Hardfork</a></em>
   </span>
     <br>
+    <br>
     <span id="estimateRelationSyntax">will occur</span> at block <strong><span id="forkBlock">14525000</span></strong>.
     <br>
 
   <div id="loading">...</div>
   <div id="estimate-prose" style="display: none;">
     The <strong>current block number</strong><sup>A</sup> is
-    <strong>
-      <a id="currentBlockNumber-link" class="currentBlockNumber glow-on-update"
-         href="https://blockscout.com/etc/mainnet/block/14445946/transactions">--</a>
-    </strong> (leaving <span id="forkBlockDiffCurrent" class="glow-on-update">--</span> blocks).
+    <strong><a id="currentBlockNumber-link" class="currentBlockNumber glow-on-update"
+         href="https://blockscout.com/etc/mainnet/block/14445946/transactions">--</a></strong>, leaving <span id="forkBlockDiffCurrent" class="glow-on-update">--</span> blocks.
     Assuming a <input id="blockTimeEstimateSeconds" type="number" style="display: inline; width: 10vw;"></input> second
     block interval,
-    this is estimated to be
+    the fork is estimated to be
     <span style="font-weight: bold;" id="forkAt" class="glow-on-update">--</span> from now, on
     <strong><span id="forkAtHuman" class="glow-on-update">--</span></strong>.
   </div>
@@ -51,13 +50,13 @@
   <a href="https://etccooperative.org/">ETC Cooperative</a>.
   <br>
   <br>
-  <span style="font-size: small; line-height: 1em;">
+  <div style="font-size: small; line-height: 1.3em;">
   <sup>A</sup>
-  This estimate was last updated <span id="updatedAt" style="text-decoration: underline;" class="glow-on-update"><em>never</em></span>.
+  This estimate was last updated <span id="updatedAt" style="text-decoration: underline dashed limegreen;" class="glow-on-update"><em>never</em></span>.
     <br>
-  The next update will poll <span id="nextUpdateAt" style="text-decoration: underline;"
+  &nbsp;&nbsp;The next update will poll <span id="nextUpdateAt" style="text-decoration: underline dashed limegreen;"
                                   class="glow-on-update"><em>soon</em></span>.
-  </span>
+  </div>
   </p>
 
 </div>
