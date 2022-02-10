@@ -29,8 +29,9 @@ function updateUI() {
   $('.currentBlockNumber').text(`${currentBlockNumber}`);
   $('#currentBlockNumber-link').attr('href', `https://blockscout.com/etc/mainnet/block/${currentBlockNumber}/transactions`);
   $('#forkAt').text(`${forkAt.fromNow()}`);
-  $('#forkAtHuman').text(`${forkAt.format('LLLL')}`);
-  $('#forkAtHuman-UTC').text(`${forkAt.utc().format('LLL')} UTC`);
+  $('#forkAtHuman').text(`Local (${forkAt.format('Z')}): ${forkAt.format('LLLL')}`);
+  // $('#forkAtHuman-UTC').text(`Universal: ${forkAt.utc().format('LLL')} UTC`);
+  $('#forkAtHuman-UTC').text(`Universal (UTC): ${forkAt.utc().format().replace('T', ' ').replace('Z', '')}`);
   $('#updatedAt').text(`${moment().diff(moment(updatedAt), 'seconds')} seconds ago`);
   $('#nextUpdateAt').text(`in ${moment(updatedAt).add(intervalPollms).diff(moment(), 's')} seconds`);
 }
