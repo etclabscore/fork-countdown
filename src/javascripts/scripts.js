@@ -30,6 +30,7 @@ function updateUI() {
   $('#currentBlockNumber-link').attr('href', `https://blockscout.com/etc/mainnet/block/${currentBlockNumber}/transactions`);
   $('#forkAt').text(`${forkAt.fromNow()}`);
   $('#forkAtHuman').text(`${forkAt.format('LLLL')}`);
+  $('#forkAtHuman-UTC').text(`${forkAt.utc().format('LLL')} UTC`);
   $('#updatedAt').text(`${moment().diff(moment(updatedAt), 'seconds')} seconds ago`);
   $('#nextUpdateAt').text(`in ${moment(updatedAt).add(intervalPollms).diff(moment(), 's')} seconds`);
 }
