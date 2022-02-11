@@ -21,7 +21,13 @@ function calculateTimeDifference(fork, current, secondsPerBlock) {
   return (fork - current) * secondsPerBlock;
 }
 
-function updateUI() {
+function updateUI(isBlockNumberInc) {
+
+  $('#updatedAt').text(`${moment().diff(moment(updatedAt), 'seconds')} seconds ago`);
+  $('#nextUpdateAt').text(`in ${moment(updatedAt).add(intervalPollms).diff(moment(), 's')} seconds`);
+
+  if (!isBlockNumberInc) return
+
   const forkAt = moment().add(calculateTimeDifference(forkBlockN, currentBlockNumber, $('#blockTimeEstimateSeconds').val()), 's');
 
   $('#forkBlock').text(`${forkBlockN}`);
@@ -32,8 +38,6 @@ function updateUI() {
   $('#forkAtHuman').text(`Local (${forkAt.format('Z')}): ${forkAt.format('LLLL')}`);
   // $('#forkAtHuman-UTC').text(`Universal: ${forkAt.utc().format('LLL')} UTC`);
   $('#forkAtHuman-UTC').text(`Universal (UTC): ${forkAt.utc().format().replace('T', ' ').replace('Z', '')}`);
-  $('#updatedAt').text(`${moment().diff(moment(updatedAt), 'seconds')} seconds ago`);
-  $('#nextUpdateAt').text(`in ${moment(updatedAt).add(intervalPollms).diff(moment(), 's')} seconds`);
 }
 
 function pollUpdate() {
@@ -73,7 +77,7 @@ function pollUpdate() {
       $('#estimate-prose').html(`Booyah! ${newCurrentBlockNumber - forkBlockN} blocks and counting in the Mystique era.`);
       $('#estimateRelationSyntax').text('occurred');
     }
-    updateUI();
+    updateUI(blockNumberIncremented);
   }
 
   function handleError(xhr, status) {
@@ -92,7 +96,7 @@ function pollUpdate() {
   });
 }
 
-updateUI();
+updateUI(false);
 setInterval(updateUI, intervalUIms);
 
 pollUpdate();
