@@ -64,12 +64,12 @@ function pollUpdate() {
     if (blockNumberIncremented) {
       const elOriginalColors = [];
       $('.glow-on-update').each((i, el) => {
-        elOriginalColors.push($(el).css('color'));
-        $(el).css('color', 'limegreen');
+        elOriginalColors.push($(el).css('background-color'));
+        $(el).css('background-color', 'limegreen');
       });
       setTimeout(() => {
         $('.glow-on-update').each((i, el) => {
-          $(el).css('color', elOriginalColors[i]);
+          $(el).css('background-color', elOriginalColors[i]);
         });
       }, 500);
     }
